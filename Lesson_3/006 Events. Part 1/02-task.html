@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+</head>
+
+<body>
+  
+
+    <script>
+        /*
+        Задание:
+        Напишите сценарий, который вычисляет объем цилиндра по параметрам, которые вводит пользователь.
+        Для расчета используйте формулу - V=π * r в квадрате * h
+        Разместите на странице два поля ввода - первое для радиуса цилиндра, второе для высоты цилиндра.
+        Объем цилиндра выведите в тело страницы.
+        */
+        
+            let createFieldOne = document.createElement("p");
+            let textContentRadius = "Radius: ";
+            let createInputRadius = document.createElement("input");
+            createInputRadius.setAttribute('id', 'input1');           
+            createFieldOne.append(textContentRadius);
+            createFieldOne.append(createInputRadius);
+            document.body.append(createFieldOne);
+
+            let createFieldTwo = document.createElement("p");
+            let textContentHeight = "Height: ";
+            let createInputHeight = document.createElement("input");
+            createInputHeight.setAttribute('id', 'input2');
+            createFieldTwo.append(textContentHeight);
+            createFieldTwo.append(createInputHeight);
+            document.body.append(createFieldTwo);
+
+            let createButton = document.createElement("button");
+            let textContentButton = "PUSH";
+            createButton.append(textContentButton);
+            document.body.append(createButton);
+
+
+
+            let radius = document.querySelector("#input1");
+            let height = document.querySelector("#input2");
+            let button = document.querySelector("button");
+            button.addEventListener("click", calculationVolume);
+
+            function calculationVolume() {
+                let volume = Math.PI * radius.value * radius.value * height.value;
+                let createTitle = document.createElement("h3");
+                createTitle.textContent = "Объем равен: " + volume + ";";
+                document.body.append(createTitle);
+            }
+       
+    </script>
+</body>
+
+</html>
